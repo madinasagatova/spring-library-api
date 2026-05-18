@@ -67,32 +67,48 @@ The project demonstrates backend development with Spring Boot, database interact
 
 ```bash
 mvn spring-boot:run
-The app runs on:
+```
 
+# The app runs on:
+
+```bash
 http://localhost:8080
-Example Requests
-Create a book:
+```
 
+## Example Requests
+
+# Create a book:
+
+```bash
 curl -X POST http://localhost:8080/api/books \
   -H "Content-Type: application/json" \
   -d '{"title":"Clean Code","author":"Robert C. Martin","genre":"Programming"}'
-Create a student:
+```
+# Create a student:
 
+```bash
 curl -X POST http://localhost:8080/api/students \
   -H "Content-Type: application/json" \
   -d '{"firstName":"Madina","lastName":"Sagatova","email":"madina@example.com"}'
-Borrow a book:
+```
 
+# Borrow a book:
+
+```bash
 curl -X POST http://localhost:8080/api/borrowings \
   -H "Content-Type: application/json" \
   -d '{"bookId":1,"studentId":1}'
-Return a book:
+```
+# Return a book:
 
+```bash
 curl -X POST http://localhost:8080/api/borrowings/1/return
-Testing
-Run tests:
+```
+## Testing
 
-mvn test
+# Run tests:
+
+# mvn test
 Current test coverage includes borrowing workflow rules:
 
 borrowing an available book
@@ -102,15 +118,18 @@ preventing duplicate return
 Database
 The project uses H2 in-memory database for local development.
 
-H2 console:
-
+# H2 console:
+```bash
 http://localhost:8080/h2-console
-JDBC URL:
+```
+# JDBC URL:
 
+```bash
 jdbc:h2:mem:librarydb
-Error Handling
+```
+# Error Handling
 The API returns structured error responses for validation, not-found and business-rule errors.
-
+```bash
 Example:
 
 {
@@ -119,5 +138,6 @@ Example:
   "error": "Conflict",
   "message": "Book is already borrowed"
 }
-Why This Project
+```
+## Why This Project
 This project was built as a portfolio backend application to practise Java, Spring Boot, REST API development, SQL-style persistence, validation, error handling, testing and production-support concepts such as health checks.
