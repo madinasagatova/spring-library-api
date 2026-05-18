@@ -63,13 +63,13 @@ The project demonstrates backend development with Spring Boot, database interact
 |---|---|---|
 | GET | `/actuator/health` | Application health check |
 
-## Running The Application
+### Running The Application
 
 ```bash
 mvn spring-boot:run
 ```
 
-# The app runs on:
+### The app runs on:
 
 ```bash
 http://localhost:8080
@@ -77,14 +77,14 @@ http://localhost:8080
 
 ## Example Requests
 
-# Create a book:
+### Create a book:
 
 ```bash
 curl -X POST http://localhost:8080/api/books \
   -H "Content-Type: application/json" \
   -d '{"title":"Clean Code","author":"Robert C. Martin","genre":"Programming"}'
 ```
-# Create a student:
+### Create a student:
 
 ```bash
 curl -X POST http://localhost:8080/api/students \
@@ -92,23 +92,23 @@ curl -X POST http://localhost:8080/api/students \
   -d '{"firstName":"Madina","lastName":"Sagatova","email":"madina@example.com"}'
 ```
 
-# Borrow a book:
+### Borrow a book:
 
 ```bash
 curl -X POST http://localhost:8080/api/borrowings \
   -H "Content-Type: application/json" \
   -d '{"bookId":1,"studentId":1}'
 ```
-# Return a book:
+### Return a book:
 
 ```bash
 curl -X POST http://localhost:8080/api/borrowings/1/return
 ```
 ## Testing
 
-# Run tests:
+### Run tests:
 
-# mvn test
+### mvn test
 Current test coverage includes borrowing workflow rules:
 
 borrowing an available book
@@ -118,16 +118,16 @@ preventing duplicate return
 Database
 The project uses H2 in-memory database for local development.
 
-# H2 console:
+### H2 console:
 ```bash
 http://localhost:8080/h2-console
 ```
-# JDBC URL:
+### JDBC URL:
 
 ```bash
 jdbc:h2:mem:librarydb
 ```
-# Error Handling
+### Error Handling
 The API returns structured error responses for validation, not-found and business-rule errors.
 ```bash
 Example:
